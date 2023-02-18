@@ -14,4 +14,7 @@
     - Does gender or age affect the amount of salary given?
 
  - Insights from the EDA
-    - 
+    - Salaries gradually increase across the three years in relation to salaries in the previous years
+    - Ages 40 - 50 have a higher salary than all the other ages, this has a higher correlation to the years of experience one has.
+    - Overall distribution of salaries highest amounts being around 50000 EUR - 75000 EUR.
+    - Data Sciencists receive more salaries than all the other professions
