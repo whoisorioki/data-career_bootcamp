@@ -118,3 +118,28 @@ SET column = value_or_expr,
     …
 WHERE condition;
 
+-- Delete statement with condition
+DELETE FROM mytable
+WHERE condition;
+
+-- Create table statement w/ optional table constraint and default value
+CREATE TABLE IF NOT EXISTS mytable (
+    column DataType TableConstraint DEFAULT default_value,
+    another_column DataType TableConstraint DEFAULT default_value,
+    …
+);
+
+-- Altering table to add new column(s)
+ALTER TABLE mytable
+ADD column DataType OptionalTableConstraint 
+    DEFAULT default_value;
+
+-- Altering table to remove column(s)
+ALTER TABLE mytable
+DROP column_to_be_deleted;
+
+-- Altering table name
+ALTER TABLE mytable
+RENAME TO new_table_name;
+
+-- 
