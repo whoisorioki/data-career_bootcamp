@@ -141,5 +141,3 @@ DROP column_to_be_deleted;
 -- Altering table name
 ALTER TABLE mytable
 RENAME TO new_table_name;
-
--- 
