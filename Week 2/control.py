@@ -6,5 +6,4 @@ for n in range(2, 89):
     else:
         print(n, 'is a prime number')
 
-
-    
+   
