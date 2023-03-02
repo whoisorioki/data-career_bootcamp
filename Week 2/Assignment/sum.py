@@ -2,9 +2,12 @@
     For example, if the array ar = [1,2,3],
         Calculate 1+2+3 = 6, so return 6."""
 
-ar = [1, 5, 5, 8, 5, 7, 8, 9]
-sum = 0
-for i in ar:
-    sum += i
 
-print(sum)
+def sum(ar):
+    total = 0
+    for i in ar:
+        total += i
+    return total
+
+ar = [1, 4, 6, 8]
+print(sum(ar))

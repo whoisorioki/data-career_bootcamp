@@ -9,6 +9,7 @@ print the lowest hacker_id.
 The query should print this information for 
 each day of the contest, sorted by the date. */
 
-SELECt hacker_id, name, day, COUNT(*)
-FROM contest
+SELECt DISTINCT hacker_id, name, day, COUNT(*)
+FROM hackers
+    INNER JOIN submissions
     GROUP BY day;
