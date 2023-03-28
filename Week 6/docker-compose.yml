@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  flask-app:
+    build: ./flask-app
+    ports:
+      - "80:80"
+  fastapi-app:
+    build: ./fastapi-app
+    ports:
+      - "81:80"
