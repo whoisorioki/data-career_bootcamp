@@ -6,12 +6,12 @@ app = Flask(__name__)
 def hello():
     return 'Welcome!'
 
-@app.route('/api/data')
+@app.route('/data')
 def get_data():
     data = {
-        'name': 'John Doe',
-        'age': 30,
-        'email': 'johndoe@example.com'
+        'name': 'Adrian Orioki',
+        'age': 21,
+        'email': 'adrianorioki@gmail.com'
     }
     return jsonify(data)
 
