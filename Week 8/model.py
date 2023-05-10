@@ -51,14 +51,14 @@ test_set = test_datagen.flow_from_directory(
         batch_size=32,
         class_mode='categorical')
 
-# classifier.fit(
-#         training_set,
-#         steps_per_epoch=len(training_set),
-#         epochs=30,
-#         validation_data=test_set,
-#         validation_steps=len(test_set))
+classifier.fit(
+        training_set,
+        steps_per_epoch=len(training_set),
+        epochs=150,
+        validation_data=test_set,
+        validation_steps=len(test_set))
 
-# classifier.save('animal_detection_model.h5')
+classifier.save('model.h5')
 
 test_image = image.load_img(
     '/home/whoisorioki/Desktop/GitHub/data-career_bootcamp/Week 8/animal dataset/test/Butterfly/8419a712a72b381f.jpg',
