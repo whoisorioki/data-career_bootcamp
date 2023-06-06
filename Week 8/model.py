@@ -32,36 +32,35 @@ classifier.add(Dense(units=80, activation='softmax'))
 classifier.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 train_datagen = ImageDataGenerator(
-        rescale=1./255,
-        shear_range=0.2,
-        zoom_range=0.2,
-        horizontal_flip=True)
+    rescale=1. / 255,
+    shear_range=0.2,
+    zoom_range=0.2,
+    horizontal_flip=True)
 
-test_datagen = ImageDataGenerator(rescale=1./255)
+test_datagen = ImageDataGenerator(rescale=1. / 255)
 
 training_set = train_datagen.flow_from_directory(
-        '/home/whoisorioki/Desktop/GitHub/data-career_bootcamp/Week 8/animal dataset/train',
-        target_size=(64, 64),
-        batch_size=32,
-        class_mode='categorical')
+    '/home/whoisorioki/Desktop/GitHub/data-career_bootcamp/Week 8/animal dataset/train',
+    target_size=(64, 64),
+    batch_size=32,
+    class_mode='categorical')
 
 test_set = test_datagen.flow_from_directory(
-        '/home/whoisorioki/Desktop/GitHub/data-career_bootcamp/Week 8/animal dataset/test',
-        target_size=(64, 64),
-        batch_size=32,
-        class_mode='categorical')
+    '/home/whoisorioki/Desktop/GitHub/data-career_bootcamp/Week 8/animal dataset/test',
+    target_size=(64, 64),
+    batch_size=32,
+    class_mode='categorical')
 
-classifier.fit(
-        training_set,
-        steps_per_epoch=len(training_set),
-        epochs=150,
-        validation_data=test_set,
-        validation_steps=len(test_set))
+# classifier.fit(training_set,
+#                steps_per_epoch=len(training_set),
+#                epochs=150,
+#                validation_data=test_set,
+#                validation_steps=len(test_set))
 
-classifier.save('model.h5')
+# classifier.save('model.h5')
 
 test_image = image.load_img(
-    '/home/whoisorioki/Desktop/GitHub/data-career_bootcamp/Week 8/animal dataset/test/Butterfly/8419a712a72b381f.jpg',
+    '/home/whoisorioki/Desktop/GitHub/data-career_bootcamp/Week 8/animal dataset/test/Bear/0df78ee76bafd3a9.jpg',
     target_size=(64, 64))
 test_image = image.img_to_array(test_image)
 test_image = np.expand_dims(test_image, axis=0)
@@ -77,4 +76,3 @@ for k, v in class_indices.items():
         predicted_class = k
 
 print('Predicted class:', predicted_class)
-
